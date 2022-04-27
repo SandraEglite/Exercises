@@ -19,8 +19,30 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        //1 nosac.ja cigaru skaits ir zem 40, tad atgriežam false
+        if (cigars < 40)
+        {
+            return false;
+        }
+            
+        //2.ja ir brivdiena, tad atgriežam vertibu true
+        if (isWeekend) 
+        {
+            return true;
+        } 
+                //3. ja cigaru skaits ir zem 60, tad atgriežam true (zinams, ka nav brivdiena, to noskaidroja nr.2)
+        if(cigars <= 60) 
+        {
+            return true;
+        }
+                //4.visos citos gadijumos return false
+                
+        return false;
     }
+    // var apvienot otro un trešo ar || if (isWeekend || cigars <= 60) un otrs
+    // varians if (cigars >= 40 && (isWeekend || cigars <= 60)) un tad var atteikties no  pirma
+
+
 
     /// <summary>
     /// You and your date are trying to get a table at a restaurant. The parameter "you" is the
@@ -36,7 +58,17 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+
+        //1.ja kāds ir 2 vai mazāk, tad atgriež vertibu 0 (jo nosacijums trumpo stiligumu)
+        if (you <= 2 || date <= 2)
+            return 0;
+
+        //2. ja kadam ir 8 vai vairak, atgriež vertibu 2
+        if (you >= 8 || date >=8)
+            return 2;
+
+        //3.citādi atgriež 1, kas ir maybe
+        return 1;
     }
 
     /// <summary>
@@ -51,7 +83,26 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        //1. ja temp ir virs 60 un zem 90, tad true
+        if (temp < 60)
+        {
+            return false;
+        }
+            
+        int maxTemp = 90;
+        if (isSummer) 
+        {
+            maxTemp += 10;
+        }
+             
+        if(temp <= maxTemp)
+        {
+            return true;
+        }
+         
+            //3.citadi false
+
+         return false;
     }
 
     /// <summary>
