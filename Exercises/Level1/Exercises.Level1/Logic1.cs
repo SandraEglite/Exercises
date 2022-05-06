@@ -117,6 +117,7 @@ public class Logic1
     /// caughtSpeeding(65, true) → 0
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
+
     {
         throw new NotImplementedException();
     }
@@ -130,9 +131,21 @@ public class Logic1
     /// sortaSum(10, 11) → 21
     /// </summary>
     public int SortaSum(int a, int b)
+        
     {
-        throw new NotImplementedException();
+        if (a + b >= 10 && a + b <= 19)
+            
+        {
+            return 20;
+        }
+        else 
+        {
+            return a + b;    
+        }
+
     }
+
+     
 
     /// <summary>
     /// Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean
@@ -147,8 +160,25 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        if (vacation)
+            if (day == 0 && day == 6)
+            {
+                return "10:00";
+            }
+            else
+            {
+                return "off";
+            }
+            
+           else if (day > 0 && day < 6);                          
+                {
+                    return "7:00";
+                }
+             
+            
+          
     }
+
 
     /// <summary>
     /// The number 6 is a truly great number. Given two int values, a and b, return true if either
@@ -255,7 +285,14 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+        {
+            return 19;
+        }
+        else 
+        {
+            return a + b;
+        }
     }
 
     /// <summary>
@@ -381,8 +418,16 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        throw new NotImplementedException();
-    }
+        if (a + 10 <= b || a + 10 <= c || b + 10 <= c || b + 10 <= a || c + 10 <= b || c + 10 <= a)    
+        {
+            return true;
+        }   
+        else
+        {
+return false;
+        }
+            
+                }
 
     /// <summary>
     /// Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is
@@ -425,7 +470,22 @@ public class Logic1
     /// </summary>
     public int RedTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a == 2 && b == 2 && c == 2) 
+        {
+            return 10;
+        }
+        if ((a == b && b == c) && (a != 2))
+        {
+            return 5;
+        }
+        if (b != a && c != a)
+        {
+            return 1;
+        }
+        else 
+        {
+            return 0;
+                }
     }
 
     /// <summary>
@@ -437,9 +497,20 @@ public class Logic1
     /// greenTicket(2, 2, 2) → 20
     /// greenTicket(1, 1, 2) → 10
     /// </summary>
-    public int GreenTicket(int a, int b, int c)
+    public int GreenTicket(int a, int b, int c) 
     {
-        throw new NotImplementedException();
+        if (a == b && a == c)
+        {
+            return 20;
+        }
+        if (( a == b && c != b) || (b == c && c != a) || (a == c && c != b))
+        {
+            return 10;
+        }
+        else 
+        {
+            return 0;
+        }
     }
 
     /// <summary>
@@ -454,7 +525,18 @@ public class Logic1
     /// </summary>
     public int BlueTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a + b == 10 || a + c == 10 || b + c == 10) 
+        {
+            return 10;
+        }
+        if ((a + b == b + c + 10) || (a + b == a + c + 10))
+            {
+            return 5;
+        }
+        else 
+        {
+            return 0;
+        }
     }
 
     /// <summary>
