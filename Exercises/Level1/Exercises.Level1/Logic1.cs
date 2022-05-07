@@ -169,13 +169,12 @@ public class Logic1
             {
                 return "off";
             }
-            
-           else if (day > 0 && day < 6);                          
-                {
-                    return "7:00";
-                }
-        
-    }
+        if (day > 0 && day < 6)
+            return "7:00";
+        else                          
+             return "10:00";
+                     
+            }
 
 
     /// <summary>
@@ -354,7 +353,12 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (isAsleep)
+            return false;
+        if (isMorning && isMom || !isMorning)
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -370,7 +374,12 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        if (tea < 5 || candy < 5)
+            return 0;
+        if (tea >= 2 * candy || candy >= 2 * tea)
+            return 2;
+        else 
+            return 1;
     }
 
     /// <summary>
@@ -384,7 +393,20 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        throw new NotImplementedException();
+        bool start = str.StartsWith("f");
+        bool end = str.EndsWith("d");   
+           if (start && end) 
+            return "FizzBuzz";
+         if (start)
+            return "Fizz";
+        if (end)
+            return "Buzz";
+                return str;
+                
+
+
+
+
     }
 
     /// <summary>
