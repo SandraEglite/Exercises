@@ -161,7 +161,7 @@ public class Logic1
     public string AlarmClock(int day, bool vacation)
     {
         if (vacation)
-            if (day == 0 && day == 6)
+            if (day > 0 && day < 6)
             {
                 return "10:00";
             }
@@ -174,9 +174,7 @@ public class Logic1
                 {
                     return "7:00";
                 }
-             
-            
-          
+        
     }
 
 
@@ -191,7 +189,19 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == 6 || b == 6)
+                    
+            return true;
+        
+        int sum = a + b;
+        int diff = Math.Abs(a - b);
+         
+        if (sum == 6 || diff == 6)
+        { 
+            return true; 
+        }
+        else 
+            return false;  
     }
 
     /// <summary>
@@ -205,8 +215,26 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
-    }
+        if (!outsideMode) 
+            if (n >= 1 && n <= 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        else if (n <= 1 || n >= 10)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        
+                }
 
     /// <summary>
     /// We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of
@@ -218,7 +246,10 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        if (n % 11 == 0 || n % 11 == 1)
+            return true;
+        else 
+            return false;   
     }
 
     /// <summary>
@@ -231,7 +262,11 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        if (n % 20 == 1 || n % 20 == 2)
+            return true;
+
+        else 
+            return false;
     }
 
     /// <summary>
@@ -244,7 +279,11 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        if ((n % 3 == 0) != (n % 5 == 0))
+                return true;
+        else 
+                return false; 
+        
     }
 
     /// <summary>
@@ -258,7 +297,10 @@ public class Logic1
     /// </summary>
     public bool Less20(int n)
     {
-        throw new NotImplementedException();
+        if ((n + 1) % 20 == 0 || (n + 2) % 20 == 0)
+            return true;
+        else 
+            return false;
     }
 
     /// <summary>
@@ -272,7 +314,13 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        throw new NotImplementedException();
+        if (num % 10 >= 8 || num % 10 < 3)
+        return true;
+        
+        else 
+        {
+            return false;
+        }
     }
 
     /// <summary>
