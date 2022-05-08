@@ -119,7 +119,17 @@ public class Logic1
     public int CaughtSpeeding(int speed, bool isBirthday)
 
     {
-        throw new NotImplementedException();
+        int ticket = 0;
+        if (isBirthday)
+            speed = speed - 5;
+        else speed = speed;
+        if (speed <= 60)
+            ticket = 0;
+        if (speed >= 61 && speed <= 80)
+            ticket = 1;
+        if (speed >= 81)
+            ticket = 2;
+        return ticket;
     }
 
     /// <summary>
@@ -145,7 +155,6 @@ public class Logic1
 
     }
 
-     
 
     /// <summary>
     /// Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean
@@ -172,10 +181,8 @@ public class Logic1
         if (day > 0 && day < 6)
             return "7:00";
         else                          
-             return "10:00";
-                     
+             return "10:00";                     
             }
-
 
     /// <summary>
     /// The number 6 is a truly great number. Given two int values, a and b, return true if either
@@ -231,8 +238,7 @@ public class Logic1
         {
             return false;
         }
-
-        
+                
                 }
 
     /// <summary>
@@ -453,7 +459,14 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (bOk)
+            if (b < c)
+            return true;    
+        if (a < b && b < c) 
+            return true;
+            
+        else 
+            return false;  
     }
 
     /// <summary>
@@ -467,7 +480,13 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (bOk)
+            if (a == b && a < c || b == c && a < b || a == b && b == c)
+            return true;
+        if (a < b && b < c)
+            return true;
+        else
+            return false;
     }
 
     /// <summary>
@@ -525,7 +544,20 @@ return false;
     /// </summary>
     public int WithoutDoubles(int die1, int die2, bool noDoubles)
     {
-        throw new NotImplementedException();
+        int result = die1 + die2 + 1;
+        if (noDoubles)
+        {
+            if (die1 == die2)
+                if (die1 != 6)
+
+                    return result;
+
+                else
+                    return die2 + 1;
+        }
+                                            
+              return die1 + die2;            
+                
     }
 
     /// <summary>
