@@ -404,9 +404,6 @@ public class Logic1
                 return str;
                 
 
-
-
-
     }
 
     /// <summary>
@@ -434,7 +431,16 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int AB = a + b; 
+        int AC = a + c; 
+        int BC = b + c; 
+
+        if (AB == c || AC == b || BC == a) 
+        {
+            return true;
+        }
+        else 
+            return false;
     }
 
     /// <summary>
@@ -475,7 +481,16 @@ public class Logic1
     /// </summary>
     public bool LastDigit(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int A = a % 10;
+        int B = b % 10; 
+        int C = c % 10;
+
+        if (A == B || A == C || B == C)
+        {
+            return true;
+        }
+        else
+            return false;   
     }
 
     /// <summary>
@@ -525,7 +540,12 @@ return false;
     /// </summary>
     public int MaxMod5(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == b)
+            return 0;
+        if (a % 5 == b % 5)
+            return Math.Min(a, b);
+        else
+            return Math.Max(a, b);
     }
 
     /// <summary>
