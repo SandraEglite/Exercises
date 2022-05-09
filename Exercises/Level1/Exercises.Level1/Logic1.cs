@@ -400,15 +400,17 @@ public class Logic1
     public string FizzString(string str)
     {
         bool start = str.StartsWith("f");
-        bool end = str.EndsWith("d");   
-           if (start && end) 
-            return "FizzBuzz";
-         if (start)
-            return "Fizz";
-        if (end)
-            return "Buzz";
-                return str;
+        bool end = str.EndsWith("b");
                 
+            if (start && end)
+                return "FizzBuzz";
+            if (start)
+                return "Fizz";
+            if (end)
+                return "Buzz";
+            else
+            return str;
+        
 
     }
 
@@ -425,7 +427,18 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
-        throw new NotImplementedException();
+       
+        if (n % 3 == 0 && n % 5 == 0)
+            return "FizzBuzz!";
+        else
+       if (n % 3 == 0 && n % 5 != 0)
+            return "Fizz!";
+       if (n % 5 == 0 && n % 3 != 0)
+            return "Buzz!";
+       
+        else
+            return n + "!";
+        
     }
 
     /// <summary>
@@ -672,7 +685,20 @@ return false;
     /// </summary>
     public bool ShareDigit(int a, int b)
     {
-        throw new NotImplementedException();
+        int aLeft = a / 10; 
+        int bLeft = b / 10;
+        int aRight = a % 10;
+        int bRight = b % 10;
+
+        if (aRight == bRight || aLeft == bLeft || aLeft == bRight || aRight == bLeft)
+        { 
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
     /// <summary>
@@ -687,7 +713,19 @@ return false;
     /// </summary>
     public int SumLimit(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum1 = a + b;
+        int sum2 = a;
+        string sameAsA = sum1.ToString();
+        string moreThanA = sum2.ToString();
+         
+        int lenght1 = sameAsA.Length;
+        int length2 = moreThanA.Length; 
+
+        if (lenght1 == length2)
+            return sum1;
+        else
+            return sum2;
     }
+    
 }
 
