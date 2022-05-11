@@ -19,24 +19,21 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        //1 nosac.ja cigaru skaits ir zem 40, tad atgriežam false
+        
         if (cigars < 40)
         {
             return false;
         }
-            
-        //2.ja ir brivdiena, tad atgriežam vertibu true
-        if (isWeekend) 
-        {
-            return true;
-        } 
-                //3. ja cigaru skaits ir zem 60, tad atgriežam true (zinams, ka nav brivdiena, to noskaidroja nr.2)
-        if(cigars <= 60) 
+
+        if (isWeekend)
         {
             return true;
         }
-                //4.visos citos gadijumos return false
-                
+        if (cigars <= 60)
+        {
+            return true;
+        }
+
         return false;
     }
     // var apvienot otro un trešo ar || if (isWeekend || cigars <= 60) un otrs
@@ -64,7 +61,7 @@ public class Logic1
             return 0;
 
         //2. ja kadam ir 8 vai vairak, atgriež vertibu 2
-        if (you >= 8 || date >=8)
+        if (you >= 8 || date >= 8)
             return 2;
 
         //3.citādi atgriež 1, kas ir maybe
@@ -88,21 +85,21 @@ public class Logic1
         {
             return false;
         }
-            
+
         int maxTemp = 90;
-        if (isSummer) 
+        if (isSummer)
         {
             maxTemp += 10;
         }
-             
-        if(temp <= maxTemp)
+
+        if (temp <= maxTemp)
         {
             return true;
         }
-         
-            //3.citadi false
 
-         return false;
+        //3.citadi false
+
+        return false;
     }
 
     /// <summary>
@@ -141,16 +138,16 @@ public class Logic1
     /// sortaSum(10, 11) → 21
     /// </summary>
     public int SortaSum(int a, int b)
-        
+
     {
         if (a + b >= 10 && a + b <= 19)
-            
+
         {
             return 20;
         }
-        else 
+        else
         {
-            return a + b;    
+            return a + b;
         }
 
     }
@@ -180,9 +177,9 @@ public class Logic1
             }
         if (day > 0 && day < 6)
             return "7:00";
-        else                          
-             return "10:00";                     
-            }
+        else
+            return "10:00";
+    }
 
     /// <summary>
     /// The number 6 is a truly great number. Given two int values, a and b, return true if either
@@ -196,18 +193,18 @@ public class Logic1
     public bool Love6(int a, int b)
     {
         if (a == 6 || b == 6)
-                    
+
             return true;
-        
+
         int sum = a + b;
         int diff = Math.Abs(a - b);
-         
+
         if (sum == 6 || diff == 6)
-        { 
-            return true; 
+        {
+            return true;
         }
-        else 
-            return false;  
+        else
+            return false;
     }
 
     /// <summary>
@@ -221,7 +218,7 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        if (!outsideMode) 
+        if (!outsideMode)
             if (n >= 1 && n <= 10)
             {
                 return true;
@@ -238,8 +235,8 @@ public class Logic1
         {
             return false;
         }
-                
-                }
+
+    }
 
     /// <summary>
     /// We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of
@@ -253,8 +250,8 @@ public class Logic1
     {
         if (n % 11 == 0 || n % 11 == 1)
             return true;
-        else 
-            return false;   
+        else
+            return false;
     }
 
     /// <summary>
@@ -270,7 +267,7 @@ public class Logic1
         if (n % 20 == 1 || n % 20 == 2)
             return true;
 
-        else 
+        else
             return false;
     }
 
@@ -285,10 +282,10 @@ public class Logic1
     public bool Old35(int n)
     {
         if ((n % 3 == 0) != (n % 5 == 0))
-                return true;
-        else 
-                return false; 
-        
+            return true;
+        else
+            return false;
+
     }
 
     /// <summary>
@@ -304,7 +301,7 @@ public class Logic1
     {
         if ((n + 1) % 20 == 0 || (n + 2) % 20 == 0)
             return true;
-        else 
+        else
             return false;
     }
 
@@ -320,9 +317,9 @@ public class Logic1
     public bool NearTen(int num)
     {
         if (num % 10 >= 8 || num % 10 < 3)
-        return true;
-        
-        else 
+            return true;
+
+        else
         {
             return false;
         }
@@ -342,7 +339,7 @@ public class Logic1
         {
             return 19;
         }
-        else 
+        else
         {
             return a + b;
         }
@@ -384,7 +381,7 @@ public class Logic1
             return 0;
         if (tea >= 2 * candy || candy >= 2 * tea)
             return 2;
-        else 
+        else
             return 1;
     }
 
@@ -401,16 +398,16 @@ public class Logic1
     {
         bool start = str.StartsWith("f");
         bool end = str.EndsWith("b");
-                
-            if (start && end)
-                return "FizzBuzz";
-            if (start)
-                return "Fizz";
-            if (end)
-                return "Buzz";
-            else
+
+        if (start && end)
+            return "FizzBuzz";
+        if (start)
+            return "Fizz";
+        if (end)
+            return "Buzz";
+        else
             return str;
-        
+
 
     }
 
@@ -427,18 +424,18 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
-       
+
         if (n % 3 == 0 && n % 5 == 0)
             return "FizzBuzz!";
         else
        if (n % 3 == 0 && n % 5 != 0)
             return "Fizz!";
-       if (n % 5 == 0 && n % 3 != 0)
+        if (n % 5 == 0 && n % 3 != 0)
             return "Buzz!";
-       
+
         else
             return n + "!";
-        
+
     }
 
     /// <summary>
@@ -450,15 +447,15 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        int AB = a + b; 
-        int AC = a + c; 
-        int BC = b + c; 
+        int AB = a + b;
+        int AC = a + c;
+        int BC = b + c;
 
-        if (AB == c || AC == b || BC == a) 
+        if (AB == c || AC == b || BC == a)
         {
             return true;
         }
-        else 
+        else
             return false;
     }
 
@@ -474,12 +471,12 @@ public class Logic1
     {
         if (bOk)
             if (b < c)
-            return true;    
-        if (a < b && b < c) 
+                return true;
+        if (a < b && b < c)
             return true;
-            
-        else 
-            return false;  
+
+        else
+            return false;
     }
 
     /// <summary>
@@ -495,7 +492,7 @@ public class Logic1
     {
         if (bOk)
             if (a == b && a < c || b == c && a < b || a == b && b == c)
-            return true;
+                return true;
         if (a < b && b < c)
             return true;
         else
@@ -514,7 +511,7 @@ public class Logic1
     public bool LastDigit(int a, int b, int c)
     {
         int A = a % 10;
-        int B = b % 10; 
+        int B = b % 10;
         int C = c % 10;
 
         if (A == B || A == C || B == C)
@@ -522,7 +519,7 @@ public class Logic1
             return true;
         }
         else
-            return false;   
+            return false;
     }
 
     /// <summary>
@@ -535,16 +532,16 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        if (a + 10 <= b || a + 10 <= c || b + 10 <= c || b + 10 <= a || c + 10 <= b || c + 10 <= a)    
+        if (a + 10 <= b || a + 10 <= c || b + 10 <= c || b + 10 <= a || c + 10 <= b || c + 10 <= a)
         {
             return true;
-        }   
+        }
         else
         {
-return false;
+            return false;
         }
-            
-                }
+
+    }
 
     /// <summary>
     /// Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is
@@ -568,9 +565,9 @@ return false;
                 else
                     return die2 + 1;
         }
-                                            
-              return die1 + die2;            
-                
+
+        return die1 + die2;
+
     }
 
     /// <summary>
@@ -605,7 +602,7 @@ return false;
     /// </summary>
     public int RedTicket(int a, int b, int c)
     {
-        if (a == 2 && b == 2 && c == 2) 
+        if (a == 2 && b == 2 && c == 2)
         {
             return 10;
         }
@@ -617,10 +614,10 @@ return false;
         {
             return 1;
         }
-        else 
+        else
         {
             return 0;
-                }
+        }
     }
 
     /// <summary>
@@ -632,17 +629,17 @@ return false;
     /// greenTicket(2, 2, 2) → 20
     /// greenTicket(1, 1, 2) → 10
     /// </summary>
-    public int GreenTicket(int a, int b, int c) 
+    public int GreenTicket(int a, int b, int c)
     {
         if (a == b && a == c)
         {
             return 20;
         }
-        if (( a == b && c != b) || (b == c && c != a) || (a == c && c != b))
+        if ((a == b && c != b) || (b == c && c != a) || (a == c && c != b))
         {
             return 10;
         }
-        else 
+        else
         {
             return 0;
         }
@@ -660,15 +657,15 @@ return false;
     /// </summary>
     public int BlueTicket(int a, int b, int c)
     {
-        if (a + b == 10 || a + c == 10 || b + c == 10) 
+        if (a + b == 10 || a + c == 10 || b + c == 10)
         {
             return 10;
         }
         if ((a + b == b + c + 10) || (a + b == a + c + 10))
-            {
+        {
             return 5;
         }
-        else 
+        else
         {
             return 0;
         }
@@ -685,20 +682,20 @@ return false;
     /// </summary>
     public bool ShareDigit(int a, int b)
     {
-        int aLeft = a / 10; 
+        int aLeft = a / 10;
         int bLeft = b / 10;
         int aRight = a % 10;
         int bRight = b % 10;
 
         if (aRight == bRight || aLeft == bLeft || aLeft == bRight || aRight == bLeft)
-        { 
+        {
             return true;
         }
         else
         {
             return false;
         }
-        
+
     }
 
     /// <summary>
@@ -717,15 +714,15 @@ return false;
         int sum2 = a;
         string sameAsA = sum1.ToString();
         string moreThanA = sum2.ToString();
-         
+
         int lenght1 = sameAsA.Length;
-        int length2 = moreThanA.Length; 
+        int length2 = moreThanA.Length;
 
         if (lenght1 == length2)
             return sum1;
         else
             return sum2;
     }
-    
+
 }
 

@@ -18,8 +18,18 @@ public class Array1
     /// firstLast6([13, 6, 1, 2, 3]) → false
     /// </summary>
     public bool FirstLast6(int[] nums)
+
     {
-        throw new NotImplementedException();
+       int first = nums[0];
+
+       int last = nums[nums.Length - 1];
+               
+        if (last == 6 || first == 6) 
+        {
+            return true;
+        }
+        return false;
+              
     }
 
     /// <summary>
@@ -32,7 +42,18 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        //1.ja masivs isaks par 1 atgriez false
+        if (nums.Length == 0) 
+        { 
+            return false; 
+        }
+
+        //2 izgust pirmo un pedejp
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+        //3 salidzinam vai vienadi
+        return first == last;
     }
 
     /// <summary>
@@ -42,7 +63,11 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+
+        //ja tikai viens mainigais, uzreiz var return
+        int[] pi = { 3, 1, 4 };
+        return pi; 
+        
     }
 
     /// <summary>
@@ -55,7 +80,22 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        // šo var saīsināt 
+        int startA = a [0];
+        int startB = b [0];
+         if (startA == startB) 
+        { 
+            return true ;
+        }
+
+        int endA = a [a.Length - 1];
+        int endB = b [b.Length - 1];
+        if (endA == endB)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -67,7 +107,16 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        //1piedefinē mainīgo kur glabā summas vērtību
+        //2izmantojot ciklu iet cauri katram masiva elementam un pieskaita summai
+        //3atgriez summas mainigo (bet labāk lietot forech !!!!)
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++) 
+        { 
+            sum = sum + nums [i];
+        }
+        return sum;
+                
     }
 
     /// <summary>
@@ -80,6 +129,14 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
+        //1. izveido jaunu masivu un ieliek vajadzigajas vietas elementus
+        //2 variants grutaks - atrisinat ar ciklu, lai nav nozime cik elementi ir masiva*
+
+        int[] result = new int[nums.Length];
+        result[0] = nums[1];
+        result[1] = nums[2];
+        result[2] = nums[0];
+        return result;  
         throw new NotImplementedException();
     }
 
