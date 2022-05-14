@@ -20,16 +20,16 @@ public class Array1
     public bool FirstLast6(int[] nums)
 
     {
-       int first = nums[0];
+        int first = nums[0];
 
-       int last = nums[nums.Length - 1];
-               
-        if (last == 6 || first == 6) 
+        int last = nums[nums.Length - 1];
+
+        if (last == 6 || first == 6)
         {
             return true;
         }
         return false;
-              
+
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ public class Array1
     public bool SameFirstLast(int[] nums)
     {
         //1.ja masivs isaks par 1 atgriez false
-        if (nums.Length == 0) 
-        { 
-            return false; 
+        if (nums.Length == 0)
+        {
+            return false;
         }
 
         //2 izgust pirmo un pedejp
@@ -66,8 +66,8 @@ public class Array1
 
         //ja tikai viens mainigais, uzreiz var return
         int[] pi = { 3, 1, 4 };
-        return pi; 
-        
+        return pi;
+
     }
 
     /// <summary>
@@ -81,15 +81,15 @@ public class Array1
     public bool CommonEnd(int[] a, int[] b)
     {
         // šo var saīsināt 
-        int startA = a [0];
-        int startB = b [0];
-         if (startA == startB) 
-        { 
-            return true ;
+        int startA = a[0];
+        int startB = b[0];
+        if (startA == startB)
+        {
+            return true;
         }
 
-        int endA = a [a.Length - 1];
-        int endB = b [b.Length - 1];
+        int endA = a[a.Length - 1];
+        int endB = b[b.Length - 1];
         if (endA == endB)
         {
             return true;
@@ -111,12 +111,12 @@ public class Array1
         //2izmantojot ciklu iet cauri katram masiva elementam un pieskaita summai
         //3atgriez summas mainigo (bet labāk lietot forech !!!!)
         int sum = 0;
-        for (int i = 0; i < nums.Length; i++) 
-        { 
-            sum = sum + nums [i];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            sum = sum + nums[i];
         }
         return sum;
-                
+
     }
 
     /// <summary>
@@ -136,7 +136,7 @@ public class Array1
         result[0] = nums[1];
         result[1] = nums[2];
         result[2] = nums[0];
-        return result;  
+        return result;
         throw new NotImplementedException();
     }
 
@@ -150,6 +150,8 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
+
+
         throw new NotImplementedException();
     }
 
@@ -177,7 +179,17 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 1)
+        {
+            return nums[0];
+        }
+
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        else { return nums[0] + nums[1]; }
+
     }
 
     /// <summary>
@@ -190,6 +202,9 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
+        return new int[] { a[1], b[1] };
+
+
         throw new NotImplementedException();
     }
 
@@ -203,6 +218,14 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
+
+        return new int[] { nums[0], nums[nums.Length - 1] };
+
+        //// garais pieraksts
+        //int first = nums[0];
+        //int last = nums[nums.Length - 1];
+        //return new int[] { first, last };
+
         throw new NotImplementedException();
     }
 
@@ -214,7 +237,20 @@ public class Array1
     /// has23([4, 5]) → false
     /// </summary>
     public bool Has23(int[] nums)
+
     {
+        int first = nums[0];
+        int second = nums[1];
+        if (first == 2 || second == 2 || first == 3 || second == 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
         throw new NotImplementedException();
     }
 
@@ -227,6 +263,17 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
+        int first = nums[0];
+        int second = nums[1];
+        if (first != 2 && second != 2 && first != 3 && second != 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
         throw new NotImplementedException();
     }
 
@@ -241,6 +288,11 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
+        int[] created = new int[nums.Length * 2];
+        created[nums.Length * 2 - 1] = nums[nums.Length - 1];
+
+        return created;
+
         throw new NotImplementedException();
     }
 
@@ -253,7 +305,19 @@ public class Array1
     /// double23([2, 3]) → false
     /// </summary>
     public bool Double23(int[] nums)
+
     {
+        if ((nums.Length == 2) && ((nums[0] == 2 && nums[1] == 2) || nums[0] == 3 && nums[1] == 3)) 
+        { 
+        return true;
+        }
+
+        else
+        { 
+            return false;
+        }
+
+
         throw new NotImplementedException();
     }
 
