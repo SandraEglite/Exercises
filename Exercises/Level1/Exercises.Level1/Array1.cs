@@ -307,13 +307,13 @@ public class Array1
     public bool Double23(int[] nums)
 
     {
-        if ((nums.Length == 2) && ((nums[0] == 2 && nums[1] == 2) || nums[0] == 3 && nums[1] == 3)) 
-        { 
-        return true;
+        if ((nums.Length == 2) && ((nums[0] == 2 && nums[1] == 2) || nums[0] == 3 && nums[1] == 3))
+        {
+            return true;
         }
 
         else
-        { 
+        {
             return false;
         }
 
@@ -331,6 +331,17 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
+
+        if (nums[0] == 2 && nums[1] == 3)
+        {
+            nums[1] = 0;
+        }
+        else if (nums[1] == 2 && nums[2] == 3)
+        {
+            nums[2] = 0;
+        }
+        return new int[] {nums [0], nums [1], nums [2]};
+    
         throw new NotImplementedException();
     }
 
@@ -356,7 +367,21 @@ public class Array1
     /// biggerTwo([1, 1], [1, 2]) → [1, 2]
     /// </summary>
     public int[] BiggerTwo(int[] a, int[] b)
+
     {
+        int sum1 = a[0] + a[1];
+        int sum2 = b[0] + b[1];
+
+        if (sum1 == sum2)
+        {
+            return a;
+        }
+        else if (sum1 > sum2)
+        {
+            return a;
+        }
+        return b;
+
         throw new NotImplementedException();
     }
 
@@ -382,7 +407,11 @@ public class Array1
     /// plusTwo([9, 2], [3, 4]) → [9, 2, 3, 4]
     /// </summary>
     public int[] PlusTwo(int[] a, int[] b)
+
     {
+        return new int[] { a[0], a[1], b[0], b[1] };
+
+
         throw new NotImplementedException();
     }
 
@@ -396,6 +425,14 @@ public class Array1
     /// </summary>
     public int[] SwapEnds(int[] nums)
     {
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+        nums[0] = last;
+        nums[nums.Length - 1] = first;
+
+        return nums;
+
         throw new NotImplementedException();
     }
 
@@ -409,6 +446,9 @@ public class Array1
     /// </summary>
     public int[] MidThree(int[] nums)
     {
+
+
+
         throw new NotImplementedException();
     }
 
@@ -422,6 +462,9 @@ public class Array1
     /// </summary>
     public int MaxTriple(int[] nums)
     {
+
+
+
         throw new NotImplementedException();
     }
 
@@ -435,6 +478,16 @@ public class Array1
     /// </summary>
     public int[] FrontPiece(int[] nums)
     {
+        if (nums.Length >= 2)
+        {
+            return new int[] { nums[0], nums[1] };
+        }
+        else 
+        {
+            return nums;
+        }
+       
+
         throw new NotImplementedException();
     }
 
@@ -475,6 +528,21 @@ public class Array1
     /// </summary>
     public int[] Front11(int[] a, int[] b)
     {
+        if (a.Length == 0 && b.Length == 0)
+        {
+            return new int[] { };
+        }
+        else if (a.Length >= 1 && b.Length == 0)
+        {
+            return new int[] { a[0] };
+        }
+        else if (a.Length == 0 && b.Length >= 1)
+        {
+            return new int[] { b[0] };
+        }
+        return new int[] { a[0], b[0] };
+    
         throw new NotImplementedException();
     }
+
 }
