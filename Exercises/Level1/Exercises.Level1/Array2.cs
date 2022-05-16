@@ -17,6 +17,14 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
+        int number = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] % 2 == 0)
+                number++;
+        }
+        return number;
+
         throw new NotImplementedException();
     }
 
@@ -31,6 +39,17 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
+        int largest = nums[0];
+        int smallest = nums[0];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            largest = Math.Max(largest, nums[i]);   
+            smallest = Math.Min(smallest, nums[i]);
+        }
+
+        return largest - smallest;
+
+
         throw new NotImplementedException();
     }
 

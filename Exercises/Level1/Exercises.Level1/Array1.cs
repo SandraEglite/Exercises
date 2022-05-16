@@ -340,8 +340,8 @@ public class Array1
         {
             nums[2] = 0;
         }
-        return new int[] {nums [0], nums [1], nums [2]};
-    
+        return new int[] { nums[0], nums[1], nums[2] };
+
         throw new NotImplementedException();
     }
 
@@ -482,11 +482,11 @@ public class Array1
         {
             return new int[] { nums[0], nums[1] };
         }
-        else 
+        else
         {
             return nums;
         }
-       
+
 
         throw new NotImplementedException();
     }
@@ -501,6 +501,22 @@ public class Array1
     /// </summary>
     public bool Unlucky1(int[] nums)
     {
+        if (nums.Length == 0 || nums.Length == 1)
+        {
+            return false;
+        }
+
+        else if ((nums[0] == 1 && nums[1] == 3) || (nums[1] == 1 && nums[2] == 3) || 
+            (nums[nums.Length - 2] == 1 && nums[nums.Length - 1] == 3))
+        {
+            return true;
+        }
+       
+        { 
+         return false;
+        }
+       
+
         throw new NotImplementedException();
     }
 
@@ -541,7 +557,7 @@ public class Array1
             return new int[] { b[0] };
         }
         return new int[] { a[0], b[0] };
-    
+
         throw new NotImplementedException();
     }
 
