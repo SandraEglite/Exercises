@@ -43,7 +43,7 @@ public class Array2
         int smallest = nums[0];
         for (int i = 0; i < nums.Length; i++)
         {
-            largest = Math.Max(largest, nums[i]);   
+            largest = Math.Max(largest, nums[i]);
             smallest = Math.Min(smallest, nums[i]);
         }
 
@@ -80,6 +80,27 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
+
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 13)
+            {
+                sum += nums[i];
+            }
+
+            else if (nums[i] == 13)
+            {
+                nums[i] = 0;
+                nums[i + 1] = 0;
+            }
+        }
+        return sum;
+
         throw new NotImplementedException();
     }
 
@@ -94,6 +115,7 @@ public class Array2
     /// </summary>
     public int Sum67(int[] nums)
     {
+
         throw new NotImplementedException();
     }
 
@@ -105,7 +127,17 @@ public class Array2
     /// has22([2, 1, 2]) → false
     /// </summary>
     public bool Has22(int[] nums)
+
     {
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums.Length >= 2 && nums[i] == 2 && nums[i + 1]  == 2)
+            {
+                return true;
+            }
+        }
+        return false;
+
         throw new NotImplementedException();
     }
 

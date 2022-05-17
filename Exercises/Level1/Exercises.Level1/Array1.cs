@@ -165,6 +165,10 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
+        int largest = Math.Max(nums[0], nums[2]);
+
+        return new int[] { largest, largest, largest };
+        
         throw new NotImplementedException();
     }
 
@@ -355,7 +359,19 @@ public class Array1
     /// </summary>
     public int Start1(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+
+        int howMany = 0;
+        if (a.Length > 0 && a[0] == 1)
+        {
+            howMany++;
+        }
+
+        if (b.Length > 0 && b[0] == 1)
+        {
+            howMany++;
+        }
+        return howMany;
+
     }
 
     /// <summary>
@@ -465,7 +481,21 @@ public class Array1
     /// </summary>
     public int MaxTriple(int[] nums)
     {
-
+        int x = nums[0];        
+        int y = nums[(nums.Length + 1) / 2 - 1];
+        int z = nums[nums.Length - 1];
+        if (x > y && x > z) 
+        { 
+            return x;
+        }
+        if (y > z && y > x)
+        {
+            return y;
+        }
+        if (z > x && z > y)
+        {
+            return z;
+        }
 
 
         throw new NotImplementedException();
