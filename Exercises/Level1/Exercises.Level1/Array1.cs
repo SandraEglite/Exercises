@@ -395,6 +395,8 @@ public class Array1
     /// </summary>
     public int[] MakeMiddle(int[] nums)
     {
+        return new int[] { nums[nums.Length / 2 - 1], nums[nums.Length / 2] };
+
         throw new NotImplementedException();
     }
 
@@ -447,7 +449,8 @@ public class Array1
     public int[] MidThree(int[] nums)
     {
 
-
+        return new int[] { nums[(nums.Length + 1) / 2 - 2],
+            nums[(nums.Length + 1) / 2 - 1], nums[(nums.Length + 1) / 2] };
 
         throw new NotImplementedException();
     }
@@ -501,22 +504,22 @@ public class Array1
     /// </summary>
     public bool Unlucky1(int[] nums)
     {
-        if (nums.Length < 2 )
+        if (nums.Length < 2)
         {
             return false;
         }
 
-        else if ((nums[0] == 1 && nums[1] == 3) || (nums[1] == 1 && nums[2] == 3) || 
-            (nums[nums.Length - 2] == 1 && nums[nums.Length - 1] == 3) || 
-            (nums.Length >2 && nums[nums.Length - 3] == 1 && nums[nums.Length - 2] == 3))
+        else if ((nums[0] == 1 && nums[1] == 3) || (nums[1] == 1 && nums[2] == 3) ||
+            (nums[nums.Length - 2] == 1 && nums[nums.Length - 1] == 3) ||
+            (nums.Length > 2 && nums[nums.Length - 3] == 1 && nums[nums.Length - 2] == 3))
         {
             return true;
         }
-       
-        { 
-         return false;
+
+        {
+            return false;
         }
-       
+
 
         throw new NotImplementedException();
     }
