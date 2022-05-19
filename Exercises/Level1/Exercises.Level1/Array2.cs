@@ -93,10 +93,14 @@ public class Array2
                 sum += nums[i];
             }
 
-            else if (nums[i] == 13)
+            else
             {
                 nums[i] = 0;
-                nums[i + 1] = 0;
+                if (i + 1 < nums.Length)
+                {
+                    nums[i + 1] = 0;
+                }
+
             }
         }
         return sum;
@@ -131,10 +135,12 @@ public class Array2
     {
         for (int i = 0; i < nums.Length; i++)
         {
-            if (nums.Length >= 2 && nums[i] == 2 && nums[i + 1]  == 2)
-            {
-                return true;
-            }
+            if (i + 1 < nums.Length)
+                if (nums.Length >= 2 && nums[i] == 2 && nums[i + 1] == 2)
+
+                {
+                    return true;
+                }
         }
         return false;
 
@@ -320,6 +326,24 @@ public class Array2
     /// </summary>
     public bool HaveThree(int[] nums)
     {
+        int count = 0;
+        if (nums.Length < 3)
+        {
+            return false;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 3 && nums[i + 1] != 3)
+                count++;
+            if (nums[nums.Length - 1] == 3 && nums[nums.Length - 2] != 3)
+                count++;
+        }
+        if (count == 3)
+        {
+            return true;
+        }
+
+
         throw new NotImplementedException();
     }
 

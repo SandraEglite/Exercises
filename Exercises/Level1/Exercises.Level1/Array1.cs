@@ -150,6 +150,10 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
+        int a = nums[2];
+        int b = nums[1];
+        int c = nums[0];
+        return new int[] { a, b, c };
 
 
         throw new NotImplementedException();
@@ -168,7 +172,7 @@ public class Array1
         int largest = Math.Max(nums[0], nums[2]);
 
         return new int[] { largest, largest, largest };
-        
+
         throw new NotImplementedException();
     }
 
@@ -481,11 +485,11 @@ public class Array1
     /// </summary>
     public int MaxTriple(int[] nums)
     {
-        int x = nums[0];        
+        int x = nums[0];
         int y = nums[(nums.Length + 1) / 2 - 1];
         int z = nums[nums.Length - 1];
-        if (x > y && x > z) 
-        { 
+        if (x > y && x > z)
+        {
             return x;
         }
         if (y > z && y > x)
@@ -565,6 +569,19 @@ public class Array1
     /// </summary>
     public int[] Make2(int[] a, int[] b)
     {
+        if (a.Length == 0)
+        {
+            return new int[] { b[0], b[1] };
+        }
+        if (a.Length == 1)
+        {
+            return new int[] { a[0], b[0] };
+        }
+        if (a.Length >= 2)
+        {
+            return new int[] { a[0], a[1] };
+        }
+
         throw new NotImplementedException();
     }
 
