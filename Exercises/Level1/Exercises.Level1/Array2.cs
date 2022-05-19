@@ -119,6 +119,27 @@ public class Array2
     /// </summary>
     public int Sum67(int[] nums)
     {
+        int sum = 0;
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 6)
+            {
+                i++;
+
+                while (nums[i] != 7 && i < nums.Length)
+                    i++;
+            }
+                else
+            {
+                sum += nums[i];
+            }
+
+        }
+        return sum;
 
         throw new NotImplementedException();
     }
@@ -156,6 +177,16 @@ public class Array2
     /// </summary>
     public bool Lucky13(int[] nums)
     {
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 1 || nums[i] == 3)
+            {
+                return false;
+            }
+
+        }
+        return true;
+
         throw new NotImplementedException();
     }
 
@@ -168,6 +199,22 @@ public class Array2
     /// </summary>
     public bool Sum28(int[] nums)
     {
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 2)
+            {
+                sum += 2;
+            }
+        }
+
+        if (sum == 8)
+        {
+            return true;
+        }
+
+        return false;
+
         throw new NotImplementedException();
     }
 
@@ -180,6 +227,22 @@ public class Array2
     /// </summary>
     public bool More14(int[] nums)
     {
+        int howMany1 = 0;
+        int howMany4 = 0;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 1)
+                howMany1++;
+            if (nums[i] == 4)
+                howMany4++;
+        }
+        if (howMany1 > howMany4)
+        {
+            return true;
+        }
+        return false;
+
         throw new NotImplementedException();
     }
 
