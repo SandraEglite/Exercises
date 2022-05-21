@@ -259,7 +259,6 @@ public class Array1
         }
 
 
-        throw new NotImplementedException();
     }
 
     /// <summary>
