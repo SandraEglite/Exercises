@@ -396,16 +396,21 @@ public class Array2
     public bool Has77(int[] nums)
     {
 
-        for (int i = 0; i < nums.Length - 1; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
-            if (nums[i] == 7 && nums[i + 1] == 7)
+            if (i + 1 < nums.Length)
             {
-                return true;
+                if (nums[i] == 7 && nums[i + 1] == 7) 
+                {
+                    return true;
+                }
             }
+                       
         }
-        for (int i = 0; i < nums.Length - 2; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
-            if (nums[i + 1] == 7 && nums[i + 2] == 7)
+            if (i + 2 < nums.Length)
+                if (nums[i] == 7 && nums[i + 2] == 7)
             {
                 return true;
             }
@@ -516,26 +521,31 @@ public class Array2
     /// </summary>
     public bool TwoTwo(int[] nums)
     {
-
-        if (nums.Length < 2)
+        
+        if (nums.Length <= 1)
         {
             return false;
         }
+
+        if (nums[nums.Length - 1] == 2 && nums[nums.Length - 2] != 2)
+        {
+            return false;
+        }
+
         for (int i = 0; i < nums.Length; i++)
         {
-            if (i + 1 < nums.Length)
+            if (nums[i] == 2)
             {
-                if (nums[i] == 2 && nums[i + 1] == 2)
+                if (i + 1 < nums.Length && nums[i + 1] != 2)
                 {
-                    return true;
+                    return false;
                 }
+                i++;
             }
         }
-        if (nums[nums.Length - 2] == 2 && nums[nums.Length - 1] != 2)
-        {
-            return true;
-        }
+        
         return false;
+
     }
 
     /// <summary>
