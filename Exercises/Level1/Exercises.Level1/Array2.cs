@@ -73,7 +73,7 @@ public class Array2
         {
             largest = Math.Max(largest, nums[i]);
             smallest = Math.Min(smallest, nums[i]);
-            sum = sum + nums[i];
+            sum += nums[i]; 
         }
         sum = sum - smallest - largest;
         return sum / (nums.Length - 2);
