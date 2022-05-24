@@ -625,7 +625,7 @@ public class Array2
 
         for (int i = 0; i < lenght; i++)
         {
-            created[i] = start; //kāpēc šis
+            created[i] = start; 
             {
                 start++;
             }
@@ -685,7 +685,7 @@ public class Array2
 
         for (int i = 0; i < firstFour; i++)
         {
-            created[i] = nums[i];//kāpēc šis?
+            created[i] = nums[i];
         }
         return created;
     }
@@ -747,13 +747,13 @@ public class Array2
     public int[] WithoutTen(int[] nums)
     {
         int tens = 0;
-        int[] created = new int[nums.Length];
+        int[] created = new int[nums.Length]; //jo visu izņemto 10 vietā nāks nulles
 
         for (int i = 0; i < nums.Length; i++)
         {
             if (nums[i] != 10)
             {
-                created[tens++] = nums[i];// kāpēc?
+                created[tens++] = nums[i];
             }
         }
         return created;
