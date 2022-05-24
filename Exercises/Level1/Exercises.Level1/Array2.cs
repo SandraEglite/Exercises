@@ -66,7 +66,17 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        int largest = nums[0];
+        int smallest = nums[0];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            largest = Math.Max(largest, nums[i]);
+            smallest = Math.Min(smallest, nums[i]);
+            sum = sum + nums[i];
+        }
+        sum = sum - smallest - largest;
+        return sum / (nums.Length - 2);
     }
 
     /// <summary>
@@ -104,8 +114,7 @@ public class Array2
             }
         }
         return sum;
-
-        throw new NotImplementedException();
+        
     }
 
     /// <summary>
@@ -141,7 +150,6 @@ public class Array2
         }
         return sum;
 
-        throw new NotImplementedException();
     }
 
     /// <summary>
@@ -157,15 +165,16 @@ public class Array2
         for (int i = 0; i < nums.Length; i++)
         {
             if (i + 1 < nums.Length)
+            {
                 if (nums.Length >= 2 && nums[i] == 2 && nums[i + 1] == 2)
 
                 {
                     return true;
                 }
+            }
         }
         return false;
-
-        throw new NotImplementedException();
+                
     }
 
     /// <summary>
@@ -215,7 +224,7 @@ public class Array2
 
         return false;
 
-        throw new NotImplementedException();
+    
     }
 
     /// <summary>
@@ -243,7 +252,7 @@ public class Array2
         }
         return false;
 
-        throw new NotImplementedException();
+        
     }
 
     /// <summary>
@@ -258,7 +267,16 @@ public class Array2
     /// </summary>
     public int[] FizzArray(int n)
     {
-        throw new NotImplementedException();
+        int[] created = new int [n];
+
+        for (int i = 0; i < n; i++)
+        {
+            created[i] = i;
+        }
+            {
+                return created; 
+            }
+         
     }
 
     /// <summary>
@@ -291,7 +309,12 @@ public class Array2
     /// </summary>
     public string[] FizzArray2(int nums)
     {
-        throw new NotImplementedException();
+        string[] created = new string[nums];
+        for (int i = 0; i < nums; i++) 
+        {
+            created[i] = i.ToString();
+        }
+        return created;
     }
 
     /// <summary>
